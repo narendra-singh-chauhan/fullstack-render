@@ -30,11 +30,11 @@ app.use(cors());
 // production
 if (process.env.NODE_ENV === 'production') {
   // Serve the static files from the frontend build directory
-  app.use(express.static(path.join(__dirname, '../dist')));
+  app.use(express.static(path.join(__dirname, '../../dist')));
 
   // For all other routes, serve the frontend index.html
   app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../dist', 'index.html'), function (error) {
+    res.sendFile(path.join(__dirname, '../../dist', 'index.html'), function (error) {
       if (error) {
         res.status(400).json({ err: error });
       }
